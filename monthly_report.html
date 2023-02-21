@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<body>
+    <div id="container">
+        <p><strong><center><h1>{{user_name}}</h1></center></strong></p><br><br>
+        {% for data in list %}
+            <ul>
+                <li><p><h3><strong>List Name : {{data.list_title}}</strong></h3></p></li>
+            </ul>
+            {% for card in cards %}
+                {% if data.list_id == card.list_list_id %}
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">Card Name : {{card.card_title}}</li>
+                        <li class="list-group-item">Card description : {{card.content}}</li>
+                        <li class="list-group-item">Card Deadline : {{card.deadline}}</li>
+                        <li class="list-group-item">Card status : {{card.status}}</li>
+                        <li class="list-group-item">Card Completed on : {{card.completed_on}}</li>
+                    </ol>
+                {% endif %}
+            {% endfor %}
+            {% for l in status %}
+                {% if data.list_id == l %}
+                    {% if status[l]['complete'] > 0 %}
+                    <h4>Summary Chart</h4>
+                        <img class="image" src= "file:///mnt/d/project 3/static/{{user_id}}_{{data.list_id}}.png"><br><br>
+                    {% endif %}
+                    COMPLETED : {{status[l]['complete']}}<br>
+                    YET TO COMPLETE : {{status[l]['yet_to_complete']}}<br>
+                    DEADLINE PASSED : {{status[l]['deadline_passed']}}<br>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+</body>
+</html>

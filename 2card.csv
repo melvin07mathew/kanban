@@ -1,0 +1,4 @@
+,card_title,content,deadline,status,completed_on
+0,Deadline checker,checking the deadline of the cards every midnight,2022-12-25,COMPLETED,2022-12-22
+1,Monthly Report,Create Monthly report and send it as mail,2022-12-25,COMPLETED,2022-12-23
+2,Daily Remainder,send daily remainder on tasks which will expires in 1 day,2022-12-25,COMPLETED,2022-12-24
